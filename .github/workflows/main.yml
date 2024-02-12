@@ -15,4 +15,3 @@ jobs:
       - name: Prepare and Run Scripts
         run: |
           pwd
-          ls -l
