@@ -14,5 +14,4 @@ jobs:
         uses: actions/checkout@v2
       - name: Prepare and Run Scripts
         run: |
-          echo $PATH
-          echo $SHELL
+          bash server-restart.sh
