@@ -2,8 +2,8 @@
 
 uwsgi_id=$(ps -e | grep uwsgi | awk '{print $1}')
 if [ -z "$uwsgi_id" ]; then
-    uwsgi --socket project.sock --module sysad_intern.wsgi
+    uwsgi --socket project.sock --module sysad_intern.wsgi & disown
 else
     kill $uwsgi_id
-    uwsgi --socket project.sock --module sysad_intern.wsgi
+    uwsgi --socket project.sock --module sysad_intern.wsgi & disown
 fi
