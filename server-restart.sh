@@ -5,5 +5,5 @@ if [ -z "$uwsgi_id" ]; then
     uwsgi --socket project.sock --module sysad_intern.wsgi --daemonize /dev/null
 else
     kill $uwsgi_id
-    uwsgi --socket project.sock --module sysad_intern.wsgi & disown --daemonize /dev/null
+    uwsgi --socket project.sock --module sysad_intern.wsgi --daemonize /dev/null
 fi
