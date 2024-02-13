@@ -1,13 +1,9 @@
-#!/bin/bash
+#! /bin/bash
 
-source ~/venv/bin/activate
-
-# uwsgi_id=$(ps -e | grep uwsgi | awk '{print $1}')
-# if [ -z "$uwsgi_id" ]; then
-#     uwsgi --socket project.sock --module sysad_intern.wsgi --daemonize /dev/null
-# else
-#     kill $uwsgi_id
-#     uwsgi --socket project.sock --module sysad_intern.wsgi --daemonize /dev/null
-# fi
-
-echo $PATH
+uwsgi_id=$(ps -e | grep uwsgi | awk '{print $1}')
+if [ -z "$uwsgi_id" ]; then
+    uwsgi --socket project.sock --module sysad_intern.wsgi --daemonize /dev/null
+else
+    kill $uwsgi_id
+    uwsgi --socket project.sock --module sysad_intern.wsgi --daemonize /dev/null
+fi
