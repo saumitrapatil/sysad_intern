@@ -16,4 +16,3 @@ jobs:
         run: |
           source ~/venv/bin/activate
           bash server-restart.sh
-          deactivate
