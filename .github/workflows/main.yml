@@ -15,7 +15,7 @@ jobs:
       - name: Run Server Restart Scripts
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}
+          host: ${{ secrets.DROPLET_IP }}
           password: ${{ secrets.SSH_PRIVATE_KEY }}
           username: ${{ secrets.USERNAME }}
           script: bash server-restart.sh
