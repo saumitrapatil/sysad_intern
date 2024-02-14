@@ -13,10 +13,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run Server Restart Scripts
-        # uses: appleboy/ssh-action@v1.0.3
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: pwd
-          host: ${{ secrets.DROPLET_IP }}
-          username: ${{ secrets.USERNAME }}
-          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          bash server-restart.sh
