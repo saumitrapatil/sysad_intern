@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Prepare and Run Scripts
-        run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} username@${{secrets.DROPLET_IP}} "sudo systemctl restart fossee.service"
+      - name: Run Server Restart Scripts
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
+          username: ${{ secrets.USERNAME }}
+          script: bash server-restart.sh
