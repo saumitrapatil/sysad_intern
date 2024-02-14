@@ -19,5 +19,4 @@ jobs:
           command: pwd
           host: ${{ secrets.DROPLET_IP }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
           privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
